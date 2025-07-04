@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --bg: #f7f8fa;
+  --card-bg: #fff;
+  --primary: #2b6cb0;
+  --secondary: #2d3748;
+  --accent: #718096;
+  --text: #222;
+  --muted: #4a5568;
+  --project-bg: #f0f4f8;
+  --about-bg: #e6f0fa;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.App.dark-mode {
+  --bg: #181c23;
+  --card-bg: #23272f;
+  --primary: #f6c177;
+  --secondary: #e2e8f0;
+  --accent: #a0aec0;
+  --text: #f7fafc;
+  --muted: #cbd5e1;
+  --project-bg: #232b36;
+  --about-bg: #22304a;
+  --shadow: 0 4px 24px rgba(0,0,0,0.32);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 24px 20px;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
+.profile-card {
+  width: 100%;
+  background: var(--project-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 32px 16px 24px 16px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  background: var(--about-bg);
+  border-radius: 50%;
+  margin: 0 auto 18px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.profile-card h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.2em 0;
+  color: var(--primary);
+}
+
+.profile-card h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 1em;
+}
+
+.profile-intro {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1.2em;
+}
+
+.profile-contact-btn {
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.profile-contact-btn:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.about-card, .skills-card {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 18px 14px;
+  margin-bottom: 22px;
+}
+
+.about-card h3, .skills-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  font-size: 1.1rem;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.skill-icon {
+  background: var(--about-bg);
+  color: var(--primary);
+  border-radius: 10px;
+  padding: 14px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.sidebar-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.social-icon {
+  background: var(--about-bg);
+  color: var(--primary);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.social-icon:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.main-content {
+  flex: 1;
+  background: var(--bg);
+  padding: 40px 48px 32px 48px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.projects-section, .experience-section, .testimonial-section, .contact-section {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 28px 24px 22px 24px;
+  margin-bottom: 0;
+}
+
+.projects-section h2, .experience-section h2, .testimonial-section h2, .contact-section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.4rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  background: var(--project-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+  padding: 18px 14px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(44, 62, 80, 0.18);
+}
+.project-card h3 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+.project-card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.experience-card {
+  background: var(--about-bg);
+  border-radius: 10px;
+  padding: 14px 12px;
+  margin-bottom: 14px;
+}
+.experience-card h4 {
+  margin: 0 0 0.3em 0;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+.experience-card p {
+  color: var(--muted);
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+.testimonial-card {
+  background: var(--project-bg);
+  border-radius: 10px;
+  padding: 18px 14px;
+  color: var(--primary);
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+.testimonial-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.7em;
+}
+
+.contact-section p {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+.contact-section a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 8px;
+  transition: color 0.2s;
+}
+.contact-section a:hover {
+  color: var(--secondary);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--project-bg);
+  color: var(--primary);
+  border: none;
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  z-index: 10;
+}
+.theme-toggle:hover {
+  background: var(--primary);
+  color: var(--card-bg);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100vw;
+    flex-direction: row;
+    padding: 18px 4px;
+    box-shadow: none;
+  }
+  .main-content {
+    padding: 18px 4px;
+  }
+  .layout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 100vw;
+    padding: 10px 2px;
+  }
+  .main-content {
+    padding: 8px 2px;
+  }
+  .projects-section, .experience-section, .testimonial-section, .contact-section {
+    padding: 12px 6px;
+  }
+}
