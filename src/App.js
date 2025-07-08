@@ -32,9 +32,9 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar-socials">
-        <a href="https://github.com/janedoe" className="social-icon" target="_blank" rel="noopener noreferrer" title="GitHub"><FaGithub /></a>
+        <a href="https://github.com/khardik07" className="social-icon" target="_blank" rel="noopener noreferrer" title="GitHub"><FaGithub /></a>
         <a href="https://linkedin.com/in/janedoe" className="social-icon" target="_blank" rel="noopener noreferrer" title="LinkedIn"><FaLinkedin /></a>
-        <a href="mailto:janedoe@email.com" className="social-icon" title="Email"><FaEnvelope /></a>
+        <a href="mailto:karumanchihardik@gmail.com" className="social-icon" title="Email"><FaEnvelope /></a>
       </div>
     </aside>
   );
@@ -78,7 +78,7 @@ function MainContent() {
         <h2>Contact</h2>
         <p>Email: <a href="mailto:janedoe@email.com">janedoe@email.com</a></p>
         <p>
-          <a href="https://github.com/janedoe" target="_blank" rel="noopener noreferrer">GitHub</a> |
+          <a href="https://github.com/khardik07" target="_blank" rel="noopener noreferrer">GitHub</a> |
           <a href="https://linkedin.com/in/janedoe" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
       </section>
