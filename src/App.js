@@ -11,11 +11,11 @@ function Sidebar() {
     <aside className="sidebar">
       <div className="profile-card">
         {/* Replace with a real profile image if available */}
-        <div className="profile-photo" style={{backgroundImage: 'url(https://randomuser.me/api/portraits/men/32.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-        <h1>Jane Doe</h1>
+        <div className="profile-photo" style={{backgroundImage: 'url(/profile-photo.PNG)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+        <h1>K Hardik</h1>
         <h2>Software Developer & Student</h2>
         <p className="profile-intro">
-          Aspiring engineer with a passion for crafting efficient backend systems and scalable data pipelines. Currently exploring the intersection of software development and data engineering.
+          Engineer with a passion for crafting efficient backend systems and scalable data pipelines. Currently exploring the intersection of software development and data engineering.
         </p>
         <a href="#contact" className="profile-contact-btn">Contact</a>
       </div>
@@ -25,7 +25,7 @@ function Sidebar() {
           I'm a student and intern passionate about Software Development and Data Engineering. I enjoy solving real-world problems through code and exploring scalable data solutions. With a strong drive to learn and grow, I’m actively building skills across backend systems, data pipelines, and modern development tools.
         </p>
       </div>
-      <div className="skills-card">
+      <div className="skills-card" id="skills">
         <h3>Skills</h3>
         <div className="skills-grid">
           <div className="skill-icon" title="JavaScript" style={{ color: '#f7df1e', background: '#232323' }}><FaJs /></div>
@@ -38,7 +38,7 @@ function Sidebar() {
       </div>
       <div className="sidebar-socials">
         <a href="https://github.com/khardik07" className="social-icon" target="_blank" rel="noopener noreferrer" title="GitHub"><FaGithub /></a>
-        <a href="" className="social-icon" target="_blank" rel="noopener noreferrer" title="LinkedIn"><FaLinkedin /></a>
+        <a href="https://www.linkedin.com/in/hardik-k3/" className="social-icon" target="_blank" rel="noopener noreferrer" title="LinkedIn"><FaLinkedin /></a>
         <a href="mailto:karumanchihardik@gmail.com" className="social-icon" title="Email"><FaEnvelope /></a>
       </div>
     </aside>
@@ -49,7 +49,8 @@ function Sidebar() {
 function MainContent() {
   return (
     <main className="main-content">
-      <section className="projects-section">
+      {/* Removed About Section */}
+      <section className="projects-section" id="projects">
         <h2>Projects</h2>
         <div className="projects-grid">
           <div className="project-card">
@@ -62,10 +63,10 @@ function MainContent() {
           </div>
         </div>
       </section>
-      <section className="experience-section">
+      <section className="experience-section" id="experience">
         <h2>Experience</h2>
         <div className="experience-card">
-          <h4>Software Engineering Intern</h4>
+          <h4>Associate Software Engineer @ MAQ Software</h4>
           <p>Contributed to frontend and backend development for a SaaS platform. (Summer 2023)</p>
         </div>
         <div className="experience-card">
@@ -73,20 +74,37 @@ function MainContent() {
           <p>Developed web projects and participated in coding competitions. (2022-2023)</p>
         </div>
       </section>
-      <section className="testimonial-section">
-        <h2>Testimonial</h2>
-        <div className="testimonial-card">
-          <p>"Jane is a dedicated developer who consistently delivers high-quality work and collaborates effectively with the team."</p>
-          <span>- Mentor</span>
-        </div>
+      {/* Removed Testimonial Section, Added Certifications Section */}
+      <section className="certifications-section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Google Data Analytics Professional Certificate</li>
+          <li>Microsoft Certified: Azure Fundamentals</li>
+          <li>Coursera: Machine Learning by Stanford University</li>
+        </ul>
       </section>
       <section className="contact-section" id="contact">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:janedoe@email.com">janedoe@email.com</a></p>
+        <p>Email: <a href="mailto:karumanchihardik@gmail.com">karumanchihardik@gmail.com</a></p>
         <p>
           <a href="https://github.com/khardik07" target="_blank" rel="noopener noreferrer">GitHub</a> |
-          <a href="https://linkedin.com/in/janedoe" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/hardik-k3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
+      </section>
+      <section className="resume-section" id="resume">
+        <h2>Resume</h2>
+        <p className="resume-description">
+          <span role="img" aria-label="document" style={{fontSize: '1.5em', verticalAlign: 'middle', marginRight: '0.5em'}}>📄</span>
+          If you’re a recruiter or collaborator interested in my background, feel free to view or download my resume. I’m always open to exciting opportunities and meaningful connections!
+        </p>
+        <div className="resume-actions">
+          <a href="/mainhardik.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn view-btn">
+            View Resume
+          </a>
+          <a href="/mainhardik.pdf" download className="resume-btn download-btn">
+            Download Resume
+          </a>
+        </div>
       </section>
     </main>
   );

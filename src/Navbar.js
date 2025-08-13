@@ -12,9 +12,11 @@ const navLinks = [
 function Navbar() {
   const [active, setActive] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [clickedNav, setClickedNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      if (clickedNav) return;
       const scrollPos = window.scrollY + 100;
       for (let i = navLinks.length - 1; i >= 0; i--) {
         const section = document.querySelector(navLinks[i].to);
@@ -26,13 +28,20 @@ function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [clickedNav]);
 
   const handleNavClick = (to) => {
     setMenuOpen(false);
-    const section = document.querySelector(to);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    setActive(to.replace('#', ''));
+    setClickedNav(true);
+    setTimeout(() => setClickedNav(false), 1000);
+    if (to === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const section = document.querySelector(to);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
